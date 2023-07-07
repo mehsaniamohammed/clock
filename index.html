@@ -1,0 +1,118 @@
+<html>
+
+<head>
+    <style>
+        body {
+            background-image: linear-gradient(to right bottom, #a100ff, #e500be, #f15194, #e2848a, #c5aba4);
+            font-family: fantasy;
+        }
+
+        h1 {
+            text-align: center;
+            color: #fff;
+            padding-top: 20px;
+            font-weight: bolder;
+            font-size: 50px;
+            font-family: cursive;
+        }
+
+        .fixed-size-container {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 50%;
+            margin: 0 auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .equal-box {
+            width: 150px;
+            height: 150px;
+            letter-spacing: 3px;
+            background-color: #fff;
+            color: #A100FF;
+            line-height: 150px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 60px;
+            border-radius: 5px;
+            align-self: center;
+            justify-content: center;
+            display: flex;
+            -webkit-box-shadow: 5px 5px 17px 0px rgb(0 0 0 / 46%);
+            -moz-box-shadow: 5px 5px 17px 0px rgb(0 0 0 / 46%);
+            box-shadow: 5px 5px 17px 0px rgb(0 0 0 / 46%);
+        }
+
+        .clock span {
+            color: #fff;
+            font-size: 100px;
+            line-height: normal;
+        }
+    </style>
+</head>
+
+<body id="body-area" class="text-center">
+    <h1>The Time Is </h1>
+    <div class="clock">
+        <div class="fixed-size-container">
+            <div id="hours" class="equal-box">00</div>
+            <span>:</span>
+            <div id="minute" class="equal-box">00</div>
+            <span>:</span>
+            <div id="seconds" class="equal-box">00</div>
+        </div>
+    </div>
+</body>
+
+<script>
+    setInterval(clock, 1000);
+    var hour = document.getElementById("hours");
+    var minute = document.getElementById("minute");
+    var seconds = document.getElementById("seconds");
+
+    var clock = setInterval(
+        function time() {
+            const clock = new Date();
+            const hr = clock.getHours();
+            const min = clock.getMinutes();
+            const sec = clock.getSeconds();
+            //am_pm = "AM";
+
+
+            //hr = hr < 10 ? "0" + hr : hr;
+            //min = min < 10 ? "0" + min : min;
+            //sec = sec < 10 ? "0" + sec : sec; 
+
+            if (hr < 10) {
+                hr = "0" + hr;
+            }
+
+            if (min < 10) {
+                min = "0" + min;
+            }
+
+            if (sec < 10) {
+                sec = "0" + sec;
+            }
+
+            hours.textContent = hr;
+            minute.textContent = min;
+            seconds.textContent = sec;
+
+            //console.log(sec);
+           // console.log();
+        }
+    ); 
+
+   
+</script>
+
+
+</html>
+
+</html>
